@@ -1,0 +1,4 @@
+*.o
+config.h
+dwm
+travis-test.diff

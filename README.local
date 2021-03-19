@@ -1,0 +1,11 @@
+# Build from source
+
+```sh
+$ sudo make config.h clean install
+```
+
+# Build patch
+
+```sh
+$ ./create-patch.sh 6.2
+```
