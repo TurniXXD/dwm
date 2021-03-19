@@ -5,7 +5,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
-static const unsigned int gappx     = 5;	/* gaps between windows */
+static const unsigned int gappx     = 10;	/* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 1;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -18,7 +18,7 @@ static const char dmenufont[]       = "Ubuntu Mono Nerd Font:size=9";
 static const char col_gray1[]       = "#210142";
 static const char col_gray2[]       = "#38096B";
 static const char col_gray3[]       = "#FFFFFF";
-static const char col_gray4[]       = "#9400D3";
+static const char col_gray4[]       = "#00E0D1";
 static const char col_main[]        = "#38096B";
 static const char col_bg[]          = "#000000";
 static const char *colors[][3]      = {
@@ -78,12 +78,12 @@ static const char *bravecmd[] = { "brave", NULL };
 static const char *screenshotroot[] = { "bash", "-c", "mkdir -p /tmp/screenshot && scrot /tmp/screenshot/%Y-%m-%d-%H-%M-%S.png", NULL };
 static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && mkdir -p /tmp/screenshot && scrot /tmp/screenshot/%Y-%m-%d-%H-%M-%S.png --select", NULL };
 
-static const char *upvol[]   = { "amixer", "set", "Master", "1%+", NULL };
-static const char *downvol[] = { "amixer", "set", "Master", "1%-", NULL };
-static const char *mute[]    = { "amixer", "set", "Master", "toggle", NULL };
+static const char *upvol[]      = { "amixer", "set", "Master", "1%+", NULL };
+static const char *downvol[]    = { "amixer", "set", "Master", "1%-", NULL };
+static const char *mute[]       = { "amixer", "set", "Master", "toggle", NULL };
 
-static const char *uplight[]   = { "light", "-A", "5", NULL };
-static const char *downlight[] = { "light", "-U", "5", NULL };
+static const char *brightup[]   = { "sudo", "xbacklight", "-inc", "10", NULL};
+static const char *brightdown[] = { "sudo", "xbacklight", "-dec", "10", NULL};
 
 static const char *lockscreen[] = { "lock-screen", NULL };
 
@@ -105,8 +105,8 @@ static Key keys[] = {
 	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol } },
 	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
 	{ 0,            XF86XK_AudioMute,          spawn,          {.v = mute } },
-	{ 0,            		XK_F8,     spawn,          {.v = uplight } },
-	{ 0,            		XK_F7,     spawn,          {.v = downlight } },
+   	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = brightup } },
+    	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = brightdown } },
 	{ 0,            XF86XK_AudioPlay,          spawn,          {.v = playerplay } },
 	{ 0,            XF86XK_AudioNext,          spawn,          {.v = playernext } },
 	{ 0,            XF86XK_AudioPrev,          spawn,          {.v = playerprev } },
