@@ -18,10 +18,10 @@ static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const char *fonts[]          = { "Ubuntu Mono Nerd Font:size=9" };
 static const char dmenufont[]       = "Ubuntu Mono Nerd Font:size=9";
-static const char col_gray1[]       = "#210142";
-static const char col_gray2[]       = "#38096B";
+static const char col_gray1[]       = "#210142"; //dark violet
+static const char col_gray2[]       = "#38096B"; //violet
 static const char col_gray3[]       = "#FFFFFF";
-static const char col_gray4[]       = "#00E0D1";
+static const char col_gray4[]       = "#00E0D1"; //light blue
 static const char col_main[]        = "#38096B";
 static const char col_bg[]          = "#000000";
 static const char *colors[][3]      = {
@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "Main", "Work", "Testing"};
+static const char *tags[] = { "", "", "", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -77,6 +77,7 @@ static const char *dmenucmd[]  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont
 static const char *termcmd[]   = { "termite", NULL };
 static const char *qpdfcmd[]   = { "qpdfview", NULL };
 static const char *bravecmd[] = { "brave", NULL };
+static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 
 static const char *screenshotroot[] = { "bash", "-c", "mkdir -p /tmp/screenshot && scrot /tmp/screenshot/%Y-%m-%d-%H-%M-%S.png", NULL };
 static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && mkdir -p /tmp/screenshot && scrot /tmp/screenshot/%Y-%m-%d-%H-%M-%S.png --select", NULL };
@@ -105,6 +106,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshotselection} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask,           XK_l,      spawn,          {.v = lockscreen } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = roficmd } },
+
 	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol } },
 	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
 	{ 0,            XF86XK_AudioMute,          spawn,          {.v = mute } },
@@ -146,11 +149,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
 };
 
 /* button definitions */
