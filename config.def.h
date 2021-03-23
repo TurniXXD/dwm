@@ -79,7 +79,7 @@ static const char *dmenucmd[]  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont
 static const char *termcmd[]   = { "termite", NULL };
 static const char *qpdfcmd[]   = { "qpdfview", NULL };
 static const char *bravecmd[] = { "brave", NULL };
-static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
+static const char *roficmd[] = { "bash", "-c", "/home/${USER}/dwm/spawnrofi.sh", NULL };
 
 static const char *screenshotroot[] = { "bash", "-c", "mkdir -p /tmp/screenshot && scrot /tmp/screenshot/%Y-%m-%d-%H-%M-%S.png", NULL };
 static const char *screenshotselection[] = { "bash", "-c", "sleep 0.2 && mkdir -p /tmp/screenshot && scrot /tmp/screenshot/%Y-%m-%d-%H-%M-%S.png --select", NULL };
