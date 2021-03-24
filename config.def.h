@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", ""};
+static const char *tags[] = { "", "", "", "", "", ""};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -39,10 +39,11 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
 	{ "Java",     "java",     "Eclipse",  0,            0,           -1 }, // eclipse splash screen
-	{ "Brave",    NULL,       NULL,       1 << 1,	    0,		 -1 }, // brave opening in second tag}
-	{ "cmus",     NULL,       NULL,       1 << 3,       0,           -1 }, // cmus opening in fourth tag
+	{ "Brave",    NULL,       NULL,       1 << 2,	    0,		 -1 }, // brave opening in second tag
+	{ "cmus",     NULL,       NULL,       1 << 5,       0,           -1 }, // cmus opening in fourth tag
+	{ "cava",     NULL,       NULL,       1 << 5,       0,           -1 }, // cava opening in fourth tag
+
 };
 
 /* layout(s) */
@@ -52,9 +53,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[ T ]",      tile },    /* first entry is default */
-	{ "[ F ]",      NULL },    /* no layout function means floating behavior */
-	{ "[ M ]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
@@ -151,6 +152,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      5)
+	TAGKEYS(                        XK_6,                      6)
+
 };
 
 /* button definitions */
