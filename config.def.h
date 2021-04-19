@@ -59,8 +59,8 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
-#define ALT Mod1Mask
+#define MODKEY Mod1Mask
+#define ALT Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -77,7 +77,7 @@ spawncmd(const char *cmd[])
 
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]  = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_main, "-sf", col_gray4, NULL };
-static const char *termcmd[]   = { "termite", NULL };
+static const char *termcmd[]   = { "alacritty", NULL };
 static const char *qpdfcmd[]   = { "qpdfview", NULL };
 static const char *bravecmd[] = { "brave", NULL };
 static const char *roficmd[] = { "bash", "-c", "/home/${USER}/dwm/spawnrofi.sh", NULL };
