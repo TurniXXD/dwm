@@ -2,7 +2,7 @@
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 ### Install packages from pkglist.txt by running<br>
-`sudo pacman -S - < pkglist.txt`
+`sudo pacman -S - < pkglist.txt`<br>
 In case, the backup list includes foreign packages, such as AUR packages, remove them first, and then install the rest of packages:<br>
 `sudo pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))`
 
