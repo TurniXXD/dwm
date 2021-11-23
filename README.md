@@ -1,5 +1,6 @@
-#dwm - dynamic window manager
+# dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X.
+![alt text](./dwm-screen.png)
 
 ### Install packages from pkglist.txt by running<br>
 `sudo pacman -S - < pkglist.txt`<br>
