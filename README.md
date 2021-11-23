@@ -1,9 +1,9 @@
 #dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X.
 
-### Install packages from pkglist.txt by running
+### Install packages from pkglist.txt by running<br>
 `sudo pacman -S - < pkglist.txt`
-In case, the backup list includes foreign packages, such as AUR packages, remove them first, and then install the rest of packages:
+In case, the backup list includes foreign packages, such as AUR packages, remove them first, and then install the rest of packages:<br>
 `sudo pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))`
 
 ### Customizations
@@ -22,15 +22,15 @@ Edit config.mk to match your local setup (dwm is installed into
 the `/usr/local` namespace by default).
 
 Afterwards enter the following command to build and install dwm (if
-necessary as root):
+necessary as root):<br>
 `make clean install`
 
 ### Running dwm
-Add the following line to your .xinitrc to start dwm using startx:
+Add the following line to your .xinitrc to start dwm using startx:<br>
 `exec dwm`
 
 In order to connect dwm to a specific display, make sure that
-the DISPLAY environment variable is set correctly, e.g.:
+the DISPLAY environment variable is set correctly, e.g.:<br>
 `DISPLAY=foo.bar:1 exec dwm`
 
 (This will start dwm on display :1 of the host foo.bar.)
